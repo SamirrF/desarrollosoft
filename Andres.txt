@@ -1,0 +1,9 @@
+Administración de roles: Andres
+Registrar rol.
+Consultar rol.
+Modificar rol.
+
+Administración de actividades: Andres
+Registrar actividad.
+Consultar actividad.
+Modificar actividad.
