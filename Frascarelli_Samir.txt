@@ -1,0 +1,23 @@
+Administración de eventos 
+Registrar eventos
+Consultar eventos.
+Modificar eventos.
+
+Administración de socio
+Registrar socio
+Consultar socio.
+Modificar socio.
+
+class Evento{
+
+}
+
+class Socio {
+    -nrosocio: String
+    -cuota:cuota
+    +estadoPago () Bool
+    +pagarCuota ()
+    +calcularTotal () Float
+}
+
+COMPLETAR
