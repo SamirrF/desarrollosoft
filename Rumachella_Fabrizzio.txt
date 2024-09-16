@@ -3,7 +3,42 @@ Registrar clientes
 Consultar clientes
 Modificar cliente
 
-Administración de Empleado: Fabri
+Administración de Empleado:
 Registrar empleado.
 Consultar empleado.
 Modificar empleado.
+
+class Persona {
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -nombre: String
+    -apellido: String
+    -tipoDocumento: TipoDocumento
+    -numeroDocumento: string
+    -domicilio: String
+    -telefono: String
+    -fechaNacimiento: DateTime
+    -email: String
+    -rol: Rol
+    -estado: bool
+	
+    +calcularEdad(): Int
+    +getTipoDocumento(): TipoDocumento
+    +getRol(): Rol
+	
+}
+
+class Especializacion {
+    -nombre: String
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -estado: bool
+}
+
+class Empleado {
+    -numeroLegajo: Int
+    -cantidadHoras: Int
+    -especializacion: Especializacion
+
+    +getEspecializacion(): String
+}
