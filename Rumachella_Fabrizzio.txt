@@ -1,0 +1,9 @@
+Administración de clientes: 
+Registrar clientes
+Consultar clientes
+Modificar cliente
+
+Administración de Empleado: Fabri
+Registrar empleado.
+Consultar empleado.
+Modificar empleado.

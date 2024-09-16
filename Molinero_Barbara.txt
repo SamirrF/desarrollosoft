@@ -1,0 +1,30 @@
+
+Gestión de pagos entrada: Barbi
+    Realizar cobro
+    Registrar venta y cobro
+    Emitir ticket
+
+Detalles pago entradas:barbi
+    Registrar item
+    Modificar item
+    Registrar cantidad
+    Modificar cantidad
+    Registrar evento
+    modificar evento
+
+
+class Cobro {
+    -numeroCobro: String
+    -fechaCobro: DateTime
+    -monto: Interger
+   -descuento: decimal
+   -responsable: Empleado
+    -metodoPago: MetodoPago
+    -estadoCobro: EstadoCobro
+    -estado: bool
+ 
+     +getEmpleado(): String
+    +getMetodoPago(): String
+    +getEstadoCobro(): String  
+}
+ //a completar
