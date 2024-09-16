@@ -73,7 +73,6 @@ class GestionVentaEntrada {
     -numeroVenta: String
     -fechaVenta: DateTime
     -descuento: decimal
-    -montoTotal: Int
     -responsable: Empleado
     -metodoPago: MetodoPago
     -detalle: DetalleVentaEntrada
@@ -93,10 +92,9 @@ class GestionVentaEntrada {
 class DetalleVentaEntrada {
     -evento: Evento
     -cantidadEntradas: Int
-    -subtotal: Int
-
+ 
     +getEvento(): Evento
-    +calcularSubtotal()
+    +calcularSubtotal(): Int
     +generarticketEntrada(): void
     +getTicketEntrada(): TicketEntrada
     +verDisponibilidadEntradas(): void
