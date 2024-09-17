@@ -3,7 +3,41 @@ Registrar rol.
 Consultar rol.
 Modificar rol.
 
-Administración de actividades: Andres
+Administración de eventos: Andres
 Registrar actividad.
 Consultar actividad.
 Modificar actividad.
+
+class evento{
+-nombre: string
+-actores: empleado
+-tipo: string
+-paisorigen: pais
+-año: date.year
+-director: empleado
+-actividades: actividad
++set nombre(nombre: string)
++get actores()
++get director()
++get paisorigen()
++get actividades()
+}
+
+class actividad{
+-descripcion: string
+}
+
+class rol{
+-nombre: string
+-fechaalta: date
+-estado: boolean
++add rol(): void
++set nombre(nombre: string)
++alter rol()
+}
+
+class fila{
+-numfila: int
+-cantasientos: int
++set numfila(numfila: int)
+}
