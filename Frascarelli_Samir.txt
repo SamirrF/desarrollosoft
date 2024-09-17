@@ -1,0 +1,41 @@
+Administración de eventos 
+Registrar eventos
+Consultar eventos.
+Modificar eventos.
+
+Administración de socio
+Registrar socio
+Consultar socio.
+Modificar socio.
+
+administración del país 
+crear país.
+modificar país.
+consultar pais. 
+anular país.
+
+
+class Evento{
+    -nombre : String
+    -descripcion : String
+    -actoresPrincipales: String
+    -direccionEvento : String
+    -añoRealizacion: Date
+    +conocerDireccion() : Void
+}
+
+class Socio {
+    -nrosocio: String
+    -cuota:cuota
+    +estadoPago () Bool
+    +pagarCuota () Void
+    +calcularTotal () Float
+}
+
+class Pais {
+    -Nombre: String
+    -Capital : String
+    -Población : String
+    +Estado (): Bool
+    +ConocerCiudad():String
+}

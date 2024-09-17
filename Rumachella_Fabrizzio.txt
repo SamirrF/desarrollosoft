@@ -1,0 +1,54 @@
+Administración de clientes: 
+Registrar clientes
+Consultar clientes
+Modificar cliente
+
+Administración de Empleado:
+Registrar empleado.
+Consultar empleado.
+Modificar empleado.
+
+//CLASES 
+class Persona {
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -nombre: String
+    -apellido: String
+    -tipoDocumento: TipoDocumento
+    -numeroDocumento: string
+    -domicilio: String
+    -telefono: String
+    -fechaNacimiento: DateTime
+    -email: String
+    -rol: Rol
+    -estado: bool
+	
+    +calcularEdad(): Int
+    +getTipoDocumento(): TipoDocumento
+    +validarDocumento(): bool //verificar que el documento cargado es valido 
+    +validarEmail(): bool //verificar que el mail es valido
+
+    +getRol(): Rol
+    
+    
+	
+}
+
+class Especializacion {
+    -nombre: String
+    -descripcion: String
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -estado: bool
+}
+
+class Empleado {
+    -numeroLegajo: Int
+    -cantidadHoras: Int
+    -especializacion: Especializacion
+    -estadoLaboral: string //se agrego estado laboral para saber si está trabajando/de vacaciones/de licencia/etc
+
+    +getEspecializacion(): String
+    +modificarEstadoLaboral(): string
+
+}

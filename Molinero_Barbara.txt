@@ -1,30 +1,94 @@
+REQUERIMIENTOS FUNCIONALES:
 
-Gestión de pagos entrada: Barbi
-    Realizar cobro
-    Registrar venta y cobro
-    Emitir ticket
+Tipo de Documento
+-Registrar tipo de documento.
+-Consultar tipo de documento.
+-Modificar tipo de documento.
 
-Detalles pago entradas:barbi
-    Registrar item
-    Modificar item
-    Registrar cantidad
-    Modificar cantidad
-    Registrar evento
-    modificar evento
+Método de Pago
+-Registrar método de pago.
+-Consultar método de pago.
+-Modificar método de pago.
+
+Gestión de Venta de Entradas
+- Registrar venta de entradas.
+- Consultar venta de entradas.
+- Verificar socio.
+- Ver disponibilidad de entradas.
+- Calcular monto total.
+- Emitir ticket de la entrada.
 
 
-class Cobro {
-    -numeroCobro: String
-    -fechaCobro: DateTime
-    -monto: Interger
-   -descuento: decimal
-   -responsable: Empleado
-    -metodoPago: MetodoPago
-    -estadoCobro: EstadoCobro
-    -estado: bool
+SECCIÓN PARA EL DIAGRAMA DE CLASES EN PlantUML:
+
+GestionVentaEntrada "1" --> "1" Empleado
+GestionVentaEntrada "1" --> "1" MetodoPago
+GestionVentaEntrada "1" --> "1" EstadoPago
+GestionVentaEntrada o--> "1..*" DetalleVentaEntrada
+GestionVentaEntrada "1" --> "1" Socio
+
+DetalleVentaEntrada "1" --> "1" Evento
+DetalleVentaEntrada "1" --> "1..*" TicketEntrada
  
-     +getEmpleado(): String
-    +getMetodoPago(): String
-    +getEstadoCobro(): String  
+class MetodoPago {  
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -nombre: String
+    -estado: bool
 }
- //a completar
+ 
+class GestionVentaEntrada {
+    -numeroVenta: String
+    -fechaVenta: DateTime
+    -descuento: decimal
+    -responsable: Empleado
+    -metodoPago: MetodoPago
+    -detalle: DetalleVentaEntrada
+    -estadoPago: EstadoPago
+    -esSocio: bool
+     
+    +getEmpleado(): String
+    +getMetodoPago(): MetodoPago
+    +getEstadoPago(): EstadoPago  
+    +calcularMontoTotal(): Int
+    +esSocio(): bool
+    +aplicarDescuento(): void
+    +getDetalleVentaEntrada(): DetalleVentaEntrada
+}
+
+class DetalleVentaEntrada {
+    -evento: Evento
+    -cantidadEntradas: Int
+ 
+    +getEvento(): Evento
+    +generarticketEntrada(): void
+    +getTicketEntrada(): TicketEntrada
+    +verDisponibilidadEntradas(): Int
+}
+
+class TipoDocumento {
+    -nombre: String
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -estado: bool
+   
+    +crearTipoDocumento(): void
+    +modificarTipoDocumento(): void
+    +consultarTipodocumento(): TipoDocumento
+    +getNombre(): String
+    +setNombre(nombre: String): void
+    +getFechaAlta(): DateTime
+    +setFechaAlta(fechaAlta: DateTime): void
+    +getFechaCambioEstado(): DateTime
+    +setFechaCambioEstado(fechaCambioEstado: DateTime): void
+    +getEstado(): bool
+    +setEstado(estado: bool): void
+ }
+
+note right of TipoDocumento
+Los métodos crear(), modificar(), consultar()
+get() y set() se utilizan en el 
+resto de las clases del mismo modo
+que en la clase TipoDocumento.
+end note
+@enduml
