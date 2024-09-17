@@ -1,55 +1,25 @@
 REQUERIMIENTOS FUNCIONALES:
 
-Tipo de Documento:
-- Registrar nombre del tipo de documento.
-- Consultar nombre del tipo de documento.
-- Modificar nombre del tipo de documento.
-- Registrar fecha de alta del tipo de documento.
-- Consultar fecha de alta del tipo de documento.
-- Modificar fecha de alta del tipo de documento.
-- Registrar fecha de cambio de estado del tipo de documento.
-- Consultar fecha de cambio de estado del tipo de documento.
-- Modificar fecha de cambio de estado del tipo de documento.
-- Registrar estado del tipo de documento.
-- Consultar estado del tipo de documento.
-- Modificar estado del tipo de documento.
+Tipo de Documento
+-Registrar tipo de documento.
+-Consultar tipo de documento.
+-Modificar tipo de documento.
+
+Método de Pago
+-Registrar método de pago.
+-Consultar método de pago.
+-Modificar método de pago.
+
+Gestión de Venta de Entradas
+- Registrar venta de entradas.
+- Consultar venta de entradas.
+- Verificar socio.
+- Ver disponibilidad de entradas.
+- Calcular monto total.
+- Emitir ticket de la entrada.
 
 
-Método de Pago:
-- Registrar nombre del método de pago.
-- Consultar nombre del método de pago.
-- Modificar nombre del método de pago.
-- Registrar fecha de alta del método de pago.
-- Consultar fecha de alta del método de pago.
-- Modificar fecha de alta del método de pago.
-- Registrar fecha de cambio de estado del método de pago.
-- Consultar fecha de cambio de estado del método de pago.
-- Modificar fecha de cambio de estado del método de pago.
-- Registrar estado del método de pago.
-- Consultar estado del método de pago.
-- Modificar estado del método de pago.
-
-Gestión de Venta de Entradas:
-- Registrar la venta de entradas de uno o mas eventos para un cliente o socio en particular.
-- Verificar si quien quiere comprar la entrada es socio para aplicarle un descuento al monto total.
-- Registrar el pago de entradas de uno o mas eventos para un cliente o socio en particular.
-- Registrar el método de pago elegido.
-- Establecer el estado del pago de las entradas.
-- Registrar el responsable de efectuar la venta de entradas.
-- Calcular el monto total a pagar por el cliente o socio en particular.
-
-
-Detalles de Venta de Entradas
-- Registrar evento a comprar.
-- Modificar evento a comprar.
-- Ver disponibilidad de entradas para el evento en particular.
-- Registrar cantidad de entradas para el evento seleccionado.
-- Modificar cantidad de entradas para el evento seleccionado.
-- Calcular el subtotal acorde al evento y cantidad de entradas.
-- Emitir cada ticket electrónico de la entrada.
-
-
-SECCION PARA DIAGRAMA DE CLASES EN PlantUML:
+SECCIÓN PARA EL DIAGRAMA DE CLASES EN PlantUML:
 
 GestionVentaEntrada "1" --> "1" Empleado
 GestionVentaEntrada "1" --> "1" MetodoPago
@@ -60,7 +30,6 @@ GestionVentaEntrada "1" --> "1" Socio
 DetalleVentaEntrada "1" --> "1" Evento
 DetalleVentaEntrada "1" --> "1..*" TicketEntrada
  
-
 class MetodoPago {  
     -fechaAlta: datetime
     -fechaCambioEstado: datetime
@@ -68,7 +37,6 @@ class MetodoPago {
     -estado: bool
 }
  
-
 class GestionVentaEntrada {
     -numeroVenta: String
     -fechaVenta: DateTime
@@ -86,7 +54,6 @@ class GestionVentaEntrada {
     +esSocio(): bool
     +aplicarDescuento(): void
     +getDetalleVentaEntrada(): DetalleVentaEntrada
- 
 }
 
 class DetalleVentaEntrada {
@@ -94,12 +61,10 @@ class DetalleVentaEntrada {
     -cantidadEntradas: Int
  
     +getEvento(): Evento
-    +calcularSubtotal(): Int
     +generarticketEntrada(): void
     +getTicketEntrada(): TicketEntrada
-    +verDisponibilidadEntradas(): void
+    +verDisponibilidadEntradas(): Int
 }
-
 
 class TipoDocumento {
     -nombre: String
@@ -119,7 +84,6 @@ class TipoDocumento {
     +getEstado(): bool
     +setEstado(estado: bool): void
  }
-
 
 note right of TipoDocumento
 Los métodos crear(), modificar(), consultar()
