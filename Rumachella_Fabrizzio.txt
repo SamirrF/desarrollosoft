@@ -8,6 +8,21 @@ Registrar empleado.
 Consultar empleado.
 Modificar empleado.
 
+Administración de Especialización:
+
+Registrar especialización.
+Consultar especialización.
+Modificar especialización.
+
+
+
+//RELACIONES
+Persona  <|--  Socio
+Persona "1" --> "1" Rol
+Persona "1" --> "0..*" GestionVentaEntrada
+Empleado "1" --> "1" Especializacion
+ 
+
 //CLASES 
 class Persona {
     -fechaAlta: datetime
