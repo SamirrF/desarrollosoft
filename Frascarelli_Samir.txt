@@ -44,7 +44,7 @@ class Evento {
     +getPersona() : Persona
     +getTipoEvento(): TipoEvento
     +getPais(): Pais
-    +getEntradasDisponibles()
+    +getEntradasDisponibles(): Int
 
 }
 class Socio {
@@ -56,7 +56,7 @@ class Socio {
 
     +calcularDeuda(): Int
     +getGestionPagoCuota(): GestionPagoCuota
-    +registrarAsistenciaEvento() 
+    +registrarAsistenciaEvento(): Bool
        
 }
 class Pais {
@@ -65,7 +65,7 @@ class Pais {
     -nombre: String
     -estado: bool
     
-    +activarPais()
-    +desactivarPais()
-    +consultarEventos()
+    +activarPais(): Bool
+    +desactivarPais(): Bool
+    +consultarEventos(): String
 }
