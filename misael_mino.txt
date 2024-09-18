@@ -1,43 +1,28 @@
+---Requerimientos funcionales---
+
 Ticket de entrada:
--Consultar fila perteneciente
--Registrar número de asiento.
--Modificar número de asiento.
--Consultar número de asiento.
+-Registar número de asiento con dependencia a fila.
 
 Gestión de pago de cuota:
 -Registrar fecha de pago de cuota.
 -Consultar fecha de pago de cuota.
 -Registrar al empleado responsable de la gestión de pago de cuota.
--Modificar al empleado responsable de la gestión de pago pago de cuota.
--Consultar al empleado responsable de la gestión de pago pago de cuota.
--Registrar monto de pago de cuota.
--Modificar monto de pago de cuota.
 -Consultar monto de pago de cuota.
 -Registrar estado del pago de cuota.
 -Modificar estado del pago de cuota.
 -Consultar estado el pago de cuota.
--Generar recibo por cancelación de cuota.
+-Generar recibo por cancelación de cuota/s.
 
 Cuota:
 -Registrar número de cuota.
--Consultar número de cuota.
--Registrar fecha de alta de la cuota.
 -Consultar fecha de alta de la cuota.
 -Registrar monto de la cuota.
--Modificar monto de la cuota.
 -Consultar monto de la cuota.
 
 Estado de pago:
 -Registrar nombre del estado de pago.
--Modificar nombre del estado de pago.
--Consultar nombre del estado de pago.
--Registrar fecha de alta del estado de pago.
--Consultar fecha de alta del estado de pago.
--Modificar fecha de alta del estado de pago.
 -Registrar fecha de cambio del estado de pago.
 -Consultar fecha de cambio del estado de pago.
--Modificar fecha de cambio del estado de pago.
--Registrar estado del estado de pago.
 -Consultar estado del estado de pago.
 -Modificar estado del estado de pago.
 
