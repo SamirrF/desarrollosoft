@@ -1,31 +1,24 @@
 ---Requerimientos funcionales---
 
 Ticket de entrada:
--Registar número de asiento con dependencia a fila.
+-Registrar Ticket de entrada.
+-Modificar Ticket de entrada.
+-Consultar Ticket de entrada.
 
 Gestión de pago de cuota:
--Registrar fecha de pago de cuota.
--Consultar fecha de pago de cuota.
--Registrar al empleado responsable de la gestión de pago de cuota.
--Consultar monto de pago de cuota.
--Registrar estado del pago de cuota.
--Modificar estado del pago de cuota.
--Consultar estado el pago de cuota.
--Generar recibo por cancelación de cuota/s.
+-Registrar pago de cuota.
+-Consultar pago de cuota.
+-Generar recibo por cancelación de cuota/s.
 
 Cuota:
--Registrar número de cuota.
--Consultar fecha de alta de la cuota.
--Registrar monto de la cuota.
--Consultar monto de la cuota.
+-Registrar cuota.
+-Consultar cuota.
+-Modificar cuota.
 
 Estado de pago:
--Registrar nombre del estado de pago.
--Registrar fecha de cambio del estado de pago.
--Consultar fecha de cambio del estado de pago.
--Consultar estado del estado de pago.
--Modificar estado del estado de pago.
-
+-Registrar estado de pago.
+-Consultar estado de pago.
+-Modificar estado de pago.
 
 Código diagrama de clases en PlantUML:
 
@@ -47,7 +40,6 @@ class GestionPagoCuota {
     -responsable: Empleado
     -monto: Int
     -estadoPago: EstadoPago
-  
     +getEmpleado(): Empleado
     +getCuota(): Cuota
     +estadoPago(): EstadoPago
