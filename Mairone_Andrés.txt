@@ -1,0 +1,42 @@
+Requerimientos Funcionales:
+
+Administración de roles
+Registrar rol.
+Consultar rol.
+Modificar rol.
+
+Administración de tipo de evento
+Registrar tipo de evento.
+Consultar tipo de evento.
+Modificar tipo de evento.
+
+Administración de filas
+Registrar fila.
+Consultar fila.
+Modificar fila.
+
+
+
+Para el diagrama de clases del PlantUML:
+
+class Rol {
+    -nombre: String
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -estado: bool
+}
+
+class TipoEvento {
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -nombre: String
+    -estado: bool
+}
+
+class Fila {
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -numeroFila: Int
+    -estado: bool
+}
+

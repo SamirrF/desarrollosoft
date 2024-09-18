@@ -3,28 +3,22 @@ Registrar rol.
 Consultar rol.
 Modificar rol.
 
-Administración de eventos: Andres
-Registrar actividad.
-Consultar actividad.
-Modificar actividad.
+Administración tipo de eventos: Andres
+Registrar tipo evento.
+Consultar tipo evento.
+Modificar tipo evento.
 
-class evento{
--nombre: string
--actores: empleado
--tipo: string
--paisorigen: pais
--año: date.year
--director: empleado
--actividades: actividad
-+set nombre(nombre: string)
-+get actores()
-+get director()
-+get paisorigen()
-+get actividades()
-}
+tipoevento "1..2" --> "1" evento
+rol "1" --> "1" persona
+fila "1..*" --> "1" ticketentrada
 
-class actividad{
+class tipoevento{
+-evento: evento
+-horario: date.time
+-precio: int
 -descripcion: string
++set precio(precio: int)
++set descripcion
 }
 
 class rol{
