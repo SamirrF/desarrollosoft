@@ -44,16 +44,21 @@ Estado de pago:
 
 Código diagrama de clases en PlantUML:
 
+GestionPagoCuota "1" --> "1" EstadoPago
+GestionPagoCuota "1" --> "1" Empleado
+GestionPagoCuota "1" --> "1..*" Cuota
+TicketEntrada  "1" --> "1" Fila
+
+
 class TicketEntrada {
     -numeroAsiento: Int
     -fila: Fila
-
     +getFila(): Fila
 }
 
 class GestionPagoCuota {
     -cuota: Cuota
-    -fechaPago: datetime
+    -fechaPago: DateTime
     -responsable: Empleado
     -monto: Int
     -estadoPago: EstadoPago
@@ -62,20 +67,20 @@ class GestionPagoCuota {
     +getCuota(): Cuota
     +estadoPago(): EstadoPago
     +pagarCuota(): void
-    +emitirRecibo()
+    +emitirRecibo() : void
 }
 
 class Cuota {
     -numeroCuota: Int
-    -fechaCuota: datetime
+    -fechaCuota: DateTime
     -monto: Int
 }
 
 class EstadoPago {
-     -fechaAlta: datetime
-     -fechaCambioEstado: datetime
+     -fechaAlta: DateTime
+     -fechaCambioEstado: DateTime
      -nombre: String
-     -estado: bool
+     -estado: Bool
 }
 
 
