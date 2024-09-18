@@ -19,6 +19,8 @@ Modificar especialización.
 //RELACIONES
 Persona  <|--  Socio
 Persona "1" --> "1" Rol
+Persona "1" --> "1" TipoDocumento
+Persona  <|--  Empleado
 Persona "1" --> "0..*" GestionVentaEntrada
 Empleado "1" --> "1" Especializacion
  
