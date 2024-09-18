@@ -1,3 +1,4 @@
+//REQUERIMIENTOS FUNCIONALES
 Administración de eventos 
 Registrar eventos
 Consultar eventos.
@@ -12,30 +13,59 @@ administración del país
 crear país.
 modificar país.
 consultar pais. 
-anular país.
 
 
-class Evento{
-    -nombre : String
-    -descripcion : String
-    -actoresPrincipales: String
-    -direccionEvento : String
-    -añoRealizacion: Date
-    +conocerDireccion() : Void
+//RELACIONES 
+Evento "1" --> "1" Pais
+Evento "1" --> "2..*" Persona
+Evento "1" --> "1" TipoEvento
+Socio "1" --> "1..*" GestionPagoCuota
+Socio "1" --> "0..*" GestionVentaEntrada
+
+
+//CLASES
+class Evento {
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -nombre: String
+    -descripcion: String
+    -direccionEvento: String
+    -actoresPrincipales: Persona
+    -tipoevento: TipoEvento
+    -paisOrigen: Pais
+    -anioRealizacion: Int
+    -director: Persona
+    -precioUnitario: Int
+    -estado: bool
+    -cantidadEntradasTotales: Int
+    -horaInicioEvento: time
+    -horaFinEvento: time
+ 
+    +getPersona() : Persona
+    +getTipoEvento(): TipoEvento
+    +getPais(): Pais
+    +getEntradasDisponibles()
+
 }
-
 class Socio {
-    -nrosocio: String
-    -cuota:cuota
-    +estadoPago () Bool
-    +pagarCuota () Void
-    +calcularTotal () Float
-}
+    -nroSocio: Int
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -cuota: GestionPagoCuota
+    -estado: Bool
 
+    +calcularDeuda(): Int
+    +getGestionPagoCuota(): GestionPagoCuota
+    +registrarAsistenciaEvento() 
+       
+}
 class Pais {
-    -Nombre: String
-    -Capital : String
-    -Población : String
-    +Estado (): Bool
-    +ConocerCiudad():String
+    -fechaAlta: datetime
+    -fechaCambioEstado: datetime
+    -nombre: String
+    -estado: bool
+    
+    +activarPais()
+    +desactivarPais()
+    +consultarEventos()
 }
